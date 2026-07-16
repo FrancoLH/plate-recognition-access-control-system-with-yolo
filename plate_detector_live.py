@@ -7,8 +7,8 @@ import onnxruntime as onnxr
 import numpy as np
 from plate_format.plate_format_ro import is_valid_plate, normalize_plate_format
 
-IMAGE_SIZE = 512
-ONNX_PATH = "yolov8n-license_plate.onnx"
+IMAGE_SIZE = 640
+ONNX_PATH = "plate_detection.onnx"
 CONFIG_TESSERACT = '--psm 6 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 last_detected_plates = {}
@@ -138,9 +138,12 @@ def display_camera_with_detection():
                     plate = extract_valid_plate(crop)
                     if plate:
                         sys.stdout.write(f"\n[{time.strftime('%H:%M:%S')}] License Plate: {plate}\n\n")
+                        sys.stdout.write("Levantar barrera\n")
                         sys.stdout.flush()
                         last_detected_plates[key] = now
                         last_detection_time = now
+
+        cv2.imshow("Camera", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break

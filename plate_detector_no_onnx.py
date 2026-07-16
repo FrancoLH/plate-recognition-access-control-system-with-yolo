@@ -5,7 +5,7 @@ import numpy as np
 from ultralytics import YOLO
 from plate_format.plate_format_ro import is_valid_plate, normalize_plate_format
 
-model = YOLO("yolov8n-license_plate.pt")
+model = YOLO("plate_detection_best.pt")
 
 last_detected_plates = {}
 max_plate_age_seconds = 10

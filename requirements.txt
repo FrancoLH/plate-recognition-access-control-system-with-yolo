@@ -3,4 +3,4 @@ opencv-python
 pytesseract
 onnx
 onnxruntime
-ultralytics
+ultralytics<=8.3.40

@@ -11,6 +11,8 @@ RO_PREFIXES = {
 # Format 1: B 123 ABC
 pattern_bucharest = re.compile(r"^B\s\d{3}\s[A-Z]{3}$")
 
+pattern_arg = re.compile(r"^[A-Z]{2}\d{3}[A-Z]{2}$")
+
 # Format 2: CJ 12 XYZ
 pattern_regional = re.compile(rf"^({'|'.join(RO_PREFIXES - {'B'})})\s\d{{2}}\s[A-Z]{{3}}$")
 
@@ -43,4 +45,4 @@ def is_valid_plate(plate: str) -> bool:
     plate = re.sub(r'\s+', ' ', plate)
     plate = normalize_plate_format(plate)
 
-    return bool(pattern_bucharest.match(plate) or pattern_regional.match(plate))
+    return bool(pattern_bucharest.match(plate) or pattern_regional.match(plate) or pattern_arg.match(plate))
