@@ -3,7 +3,7 @@ import cv2
 import pytesseract
 import numpy as np
 from ultralytics import YOLO
-from plate_format.plate_format_ro import is_valid_plate, normalize_plate_format
+from plate_format.plate_format_ar import is_valid_plate, normalize_plate_format
 
 model = YOLO("plate_detection_best.pt")
 
@@ -59,7 +59,7 @@ def preprocess_plate(plate_crop):
 
 def extract_valid_plate(plate_crop):
     """
-    Runs OCR on the plate image and returns a valid Romanian plate string if found.
+    Runs OCR on the plate image and returns a valid Argentine plate string if found.
     """
     processed = preprocess_plate(plate_crop)
     config = '--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'

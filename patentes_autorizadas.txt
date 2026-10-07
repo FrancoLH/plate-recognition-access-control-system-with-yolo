@@ -1,0 +1,5 @@
+# Una patente autorizada por línea. Se ignoran líneas vacías y comentarios.
+# Formatos admitidos: AA 123 AA, ABC 123, A 123 ABC y 123 ABC.
+
+
+A 123 BCD

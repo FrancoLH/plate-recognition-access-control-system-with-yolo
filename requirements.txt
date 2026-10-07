@@ -1,6 +1,7 @@
 numpy
 opencv-python
 pytesseract
+pyserial
 onnx
 onnxruntime
 ultralytics<=8.3.40
