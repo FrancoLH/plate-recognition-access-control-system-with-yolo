@@ -18,7 +18,7 @@ CONFIG_TESSERACT = '--psm 6 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXY
 
 INFERENCE_INTERVAL_SECONDS = 0.5
 OCR_INTERVAL_SECONDS = 0.75
-PLATE_REARM_SECONDS = 10
+PLATE_REARM_SECONDS = 5
 last_seen_plates = {}
 
 clahe = cv2.createCLAHE(clipLimit=1.8, tileGridSize=(8,8))
